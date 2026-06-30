@@ -898,8 +898,8 @@ body {
    ========================================= */
 /* Guidelines ko bada kiya taaki page bhara hua dikhe */
 .guide-text { 
-    font-size: 9.5pt !important; /* Font size badhaya */
-    line-height: 1.4 !important; /* Lines ke beech ka gap badhaya */
+    font-size: 9.0pt !important; /* Font size badhaya */
+    line-height: 1.2 !important; /* Lines ke beech ka gap badhaya */
 }
 .guide-text ol > li { margin-bottom: 6px !important; }
 .guide-text ul { margin-top: 3px !important; }
