@@ -854,3 +854,55 @@ body {
 .guide-text ul li { margin-bottom: 1px !important; }
 .grades-list { margin-top: 2px !important; margin-bottom: 2px !important; }
 .grade-item { margin-bottom: 1px !important; }
+
+/* =========================================
+   FINAL FIX 1: MANAGER NAME & DATE FITTING
+   ========================================= */
+/* Controller aur Examiner ke Name ko shrink kiya taaki 35+ characters fit hon */
+.meta-table .name-desig-input,
+.meta-table input#cName, 
+.meta-table input#eName {
+    font-size: 6.5pt !important;
+    letter-spacing: -0.3px !important;
+    padding: 0 1px !important;
+}
+
+/* Licence aur Medical Date ka size shrink kiya taaki '17/02/2026' poora aaye */
+.meta-table input[type="date"],
+.meta-table input#cLicenceVal,
+.meta-table input#cMedicalVal,
+.meta-table input#eLicenceVal,
+.meta-table input#eMedicalVal {
+    font-size: 6.5pt !important;
+    letter-spacing: -0.5px !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+/* Date field ka Arrow invisible rakhne ka code (Clickable Calendar) */
+.meta-table input[type="date"]::-webkit-inner-spin-button {
+    display: none !important;
+}
+.meta-table input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+}
+
+/* =========================================
+   FINAL FIX 2: PAGE 4 (LAST PAGE) FONT BADA KIYA
+   ========================================= */
+/* Guidelines ko bada kiya taaki page bhara hua dikhe */
+.guide-text { 
+    font-size: 9.5pt !important; /* Font size badhaya */
+    line-height: 1.4 !important; /* Lines ke beech ka gap badhaya */
+}
+.guide-text ol > li { margin-bottom: 6px !important; }
+.guide-text ul { margin-top: 3px !important; }
+.guide-text ul li { margin-bottom: 3px !important; }
+.grades-list { margin-top: 5px !important; margin-bottom: 5px !important; }
+.grade-item { margin-bottom: 3px !important; }
