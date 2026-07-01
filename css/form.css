@@ -882,52 +882,28 @@ body {
 .grade-item { margin-bottom: 3px !important; }
 
 /* =========================================
-   🚨 SUPREME DATE ARROW FIX 🚨
+   🚨 MOBILE DATE CUT-OFF FIX 🚨
    ========================================= */
-
-/* Box ko set kiya taaki text center me aaye */
-input[type="date"], 
 .meta-table input[type="date"] {
-    position: relative !important;
-    text-align: center !important;
-    -webkit-appearance: none !important; /* Browser ki default styling hata di */
-    appearance: none !important;
-}
-
-/* Faltu ka Up/Down spin button hamesha ke liye gayab */
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button {
-    display: none !important;
-    -webkit-appearance: none !important;
-}
-
-/* Calendar Icon (Arrow) ko invisible karke pure box pe faila diya */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
+    font-size: 7.5px !important; /* Font chhota kiya */
+    letter-spacing: -0.5px !important; /* Numbers ko chipkaya */
+    padding: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
-    opacity: 0 !important; /* Aankhon se gayab! */
-    background: transparent !important;
-    color: transparent !important;
-    cursor: pointer !important;
-    z-index: 10 !important; /* Click hone ke liye sabse upar rakha */
-}
-/* =========================================
-   DATE FITTING & SQUEEZE FIX
-   ========================================= */
-.meta-table input[type="date"],
-.meta-table input#cLicenceVal,
-.meta-table input#cMedicalVal,
-.meta-table input#eLicenceVal,
-.meta-table input#eMedicalVal {
-    font-size: 5.0pt !important; /* Font thoda aur chhota kiya taaki poora aaye */
-    letter-spacing: -0.5px !important; /* Numbers ko thoda paas-paas kiya */
-    padding: 0 !important;
-    width: 100% !important; /* Box ki poori width use karne ke liye */
-    box-sizing: border-box !important;
+    width: 100% !important;
     text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Chrome Android ke andar ki space ko zero kiya */
+.meta-table input[type="date"]::-webkit-datetime-edit {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Date ko zabardasti center mein laane ka hack */
+.meta-table input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
 }
