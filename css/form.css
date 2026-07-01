@@ -916,3 +916,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer !important;
     z-index: 10 !important; /* Click hone ke liye sabse upar rakha */
 }
+/* =========================================
+   DATE FITTING & SQUEEZE FIX
+   ========================================= */
+.meta-table input[type="date"],
+.meta-table input#cLicenceVal,
+.meta-table input#cMedicalVal,
+.meta-table input#eLicenceVal,
+.meta-table input#eMedicalVal {
+    font-size: 6pt !important; /* Font thoda aur chhota kiya taaki poora aaye */
+    letter-spacing: -0.5px !important; /* Numbers ko thoda paas-paas kiya */
+    padding: 0 !important;
+    width: 100% !important; /* Box ki poori width use karne ke liye */
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
