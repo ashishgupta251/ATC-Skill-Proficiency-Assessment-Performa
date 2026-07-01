@@ -867,32 +867,6 @@ body {
     padding: 0 1px !important;
 }
 
-/* Licence aur Medical Date ka size shrink kiya taaki '17/02/2026' poora aaye */
-.meta-table input[type="date"],
-.meta-table input#cLicenceVal,
-.meta-table input#cMedicalVal,
-.meta-table input#eLicenceVal,
-.meta-table input#eMedicalVal {
-    font-size: 6.5pt !important;
-    letter-spacing: -0.5px !important;
-    padding: 0 !important;
-    text-align: center;
-}
-
-/* Date field ka Arrow invisible rakhne ka code (Clickable Calendar) */
-.meta-table input[type="date"]::-webkit-inner-spin-button {
-    display: none !important;
-}
-.meta-table input[type="date"]::-webkit-calendar-picker-indicator {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    opacity: 0 !important;
-    cursor: pointer !important;
-}
-
 /* =========================================
    FINAL FIX 2: PAGE 4 (LAST PAGE) FONT BADA KIYA
    ========================================= */
@@ -908,25 +882,37 @@ body {
 .grade-item { margin-bottom: 3px !important; }
 
 /* =========================================
-   DATE ARROW INVISIBLE & CLICKABLE HACK
+   🚨 SUPREME DATE ARROW FIX 🚨
    ========================================= */
-input[type="date"] {
+
+/* Box ko set kiya taaki text center me aaye */
+input[type="date"], 
+.meta-table input[type="date"] {
     position: relative !important;
-    cursor: pointer !important;
+    text-align: center !important;
+    -webkit-appearance: none !important; /* Browser ki default styling hata di */
+    appearance: none !important;
 }
 
+/* Faltu ka Up/Down spin button hamesha ke liye gayab */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+/* Calendar Icon (Arrow) ko invisible karke pure box pe faila diya */
 input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
     width: 100% !important;
     height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    opacity: 0 !important; /* Ye arrow ko gayab karta hai */
+    opacity: 0 !important; /* Aankhon se gayab! */
     background: transparent !important;
     color: transparent !important;
     cursor: pointer !important;
+    z-index: 10 !important; /* Click hone ke liye sabse upar rakha */
 }
