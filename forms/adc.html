@@ -26,6 +26,24 @@
       .fraction .bottom {
         padding: 0 4px;
       }
+      /* 🚨 DIRECT HTML INJECTION: DATE ARROW KILLER 🚨 */
+      input[type="date"] {
+          position: relative !important;
+          text-align: center !important;
+      }
+      
+      input[type="date"]::-webkit-calendar-picker-indicator {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          opacity: 0 !important; 
+          background: transparent !important;
+          color: transparent !important;
+          cursor: pointer !important;
+          z-index: 999 !important;
+      }
     </style>
   </head>
   <body>
