@@ -924,7 +924,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .meta-table input#cMedicalVal,
 .meta-table input#eLicenceVal,
 .meta-table input#eMedicalVal {
-    font-size: 5.5pt !important; /* Font thoda aur chhota kiya taaki poora aaye */
+    font-size: 5.0pt !important; /* Font thoda aur chhota kiya taaki poora aaye */
     letter-spacing: -0.5px !important; /* Numbers ko thoda paas-paas kiya */
     padding: 0 !important;
     width: 100% !important; /* Box ki poori width use karne ke liye */
