@@ -1,14 +1,9 @@
-/* ==================
-   STEP 1: BASE SETUP
-   ==================*/
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 body {
   background: #525659;
   display: flex;
@@ -17,7 +12,6 @@ body {
   padding: 20px;
   padding-top: 90px;
 }
-
 .a4-page {
   width: 210mm;
   min-height: 297mm;
@@ -28,16 +22,11 @@ body {
   position: relative;
   color: #000000;
 }
-
-/* =====================
-   MOBILE RESPONSIVENESS
-   ===================== */
 @media screen and (max-width: 850px) {
   body {
     padding: 10px;
     padding-top: 80px;
   }
-
   .a4-page {
     width: 100% !important;
     height: auto !important;
@@ -47,11 +36,6 @@ body {
     overflow-x: auto;
   }
 }
-
-/* ==============
-   STEP 2: NAVBAR
-   ============== */
-
 .common-navbar {
   position: fixed;
   top: 0;
@@ -67,7 +51,6 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 .nav-left,
 .nav-center,
 .nav-right {
@@ -75,7 +58,6 @@ body {
   align-items: center;
   gap: 15px;
 }
-
 .brand-box {
   display: flex;
   flex-direction: column;
@@ -84,12 +66,10 @@ body {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   padding-right: 15px;
 }
-
 .nav-logo {
   height: 30px;
   margin-bottom: 2px;
 }
-
 .brand-text {
   font-size: 9px;
   font-weight: bold;
@@ -98,7 +78,6 @@ body {
   text-align: center;
   white-space: nowrap;
 }
-
 .nav-center {
   background: rgba(0, 0, 0, 0.3);
   padding: 6px 15px;
@@ -108,13 +87,11 @@ body {
   letter-spacing: 1px;
   color: #00ffcc;
 }
-
 .nav-user {
   font-size: 14px;
   font-weight: bold;
   margin-right: 10px;
 }
-
 .nav-btn {
   padding: 8px 15px;
   border: none;
@@ -124,7 +101,6 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .nav-pdf {
   background: #28a745;
   color: white;
@@ -132,7 +108,6 @@ body {
 .nav-pdf:hover {
   background: #218838;
 }
-
 .nav-logout {
   background: #dc3545;
   color: white;
@@ -140,24 +115,20 @@ body {
 .nav-logout:hover {
   background: #b02a37;
 }
-
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 2px solid #1e3a8a !important;
-
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding-left: 1mm !important;
   padding-right: 1mm !important;
-
   padding-bottom: 5px !important;
   margin-bottom: 12px !important;
   margin-top: -12mm;
   padding-top: 12mm;
 }
-
 .header-left {
   text-align: center;
   display: flex;
@@ -165,12 +136,10 @@ body {
   align-items: center;
   margin-bottom: -2px;
 }
-
 .header-left img {
   width: 75px;
   margin-bottom: 3px;
 }
-
 .header-left h1 {
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 11pt;
@@ -180,13 +149,11 @@ body {
   text-align: center;
   margin: 0;
 }
-
 .header-left h1::first-line {
   font-family: Arial, sans-serif;
   font-size: 11.5pt;
   font-weight: normal;
 }
-
 .header-right {
   font-size: 13pt;
   color: #1e3a8a;
@@ -194,42 +161,36 @@ body {
   margin-bottom: 0px;
   line-height: 1;
 }
-
 .form-title-block {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 15px;
   color: #000000;
 }
-
 .title-main {
   font-size: 13pt;
   font-weight: bold;
   text-decoration: underline;
   margin-bottom: 3px;
 }
-
 .title-sub {
   font-size: 9.5pt;
   font-weight: bold;
   line-height: 1.4;
   margin: 0 auto 12px auto;
 }
-
 .title-unit {
   font-size: 12pt;
   font-weight: bold;
   text-decoration: underline;
   text-transform: uppercase;
 }
-
 .meta-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
   table-layout: fixed;
 }
-
 .meta-table col:nth-child(1),
 .meta-table col:nth-child(5) {
   width: 25%;
@@ -246,7 +207,6 @@ body {
 .meta-table col:nth-child(8) {
   width: 9.5%;
 }
-
 .meta-table th,
 .meta-table td {
   border: 1px solid #000000;
@@ -258,14 +218,12 @@ body {
   line-height: 1.2;
   word-wrap: break-word;
 }
-
 .meta-table .header-row-gray th,
 .meta-table .header-row-gray td {
   background-color: #c0c0c0 !important;
   font-weight: normal;
   text-align: center;
 }
-
 .meta-table tr:first-child td {
   text-align: left;
   vertical-align: top;
@@ -274,7 +232,6 @@ body {
   color: #333333;
   font-weight: normal;
 }
-
 .meta-table input,
 .meta-table textarea,
 .meta-table select {
@@ -289,7 +246,6 @@ body {
   padding: 0;
   margin-top: 2px;
 }
-
 .meta-table tr:first-child td:nth-child(1) input {
   font-size: 12pt !important;
 }
@@ -299,7 +255,6 @@ body {
 .meta-table tr:first-child td:nth-child(4) input {
   font-size: 10pt !important;
 }
-
 .meta-table tr:first-child td:nth-child(2) textarea {
   font-size: 7pt !important;
   white-space: normal !important;
@@ -308,7 +263,6 @@ body {
   height: 24px;
   font-weight: 600;
 }
-
 .meta-table td textarea {
   font-size: 7.5pt !important;
   line-height: 1.1 !important;
@@ -318,12 +272,6 @@ body {
   resize: none !important;
   height: 28px !important;
 }
-
-/* Date fields ab plain text inputs hain (DD/MM/YYYY) taaki mobile par
-   koi native calendar icon/arrow render na ho. Ek chhota calendar button
-   (JS se add hota hai) tap karne par background me chhupa hua native
-   date input khulta hai aur date wapas is text field me DD/MM/YYYY
-   format me daal deta hai. */
 .meta-table input.date-field {
   font-size: 7.5pt !important;
   letter-spacing: -0.5px !important;
@@ -333,18 +281,15 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
-
 .date-wrap {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: middle;
 }
-
 .date-wrap input.date-field {
   padding-right: 11px !important;
 }
-
 .date-pick-btn {
   position: absolute;
   right: 0;
@@ -364,7 +309,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .date-hidden-picker {
   position: absolute;
   left: 0;
@@ -377,14 +321,12 @@ body {
   margin: 0;
   pointer-events: none;
 }
-
 @media print {
   .date-pick-btn,
   .date-hidden-picker {
     display: none !important;
   }
 }
-
 .pi-table {
   width: 100%;
   border-collapse: collapse;
@@ -393,7 +335,6 @@ body {
   font-size: 8.5pt;
   table-layout: fixed;
 }
-
 .pi-table col:nth-child(1) {
   width: 10%;
 }
@@ -421,7 +362,6 @@ body {
 .pi-table col:nth-child(9) {
   width: 7%;
 }
-
 .pi-table th,
 .pi-table td {
   border: 1px solid #000000;
@@ -431,26 +371,21 @@ body {
   line-height: 1.25;
   word-wrap: break-word;
 }
-
 .pi-table td:nth-child(4) {
   text-align: justify;
 }
-
 .pi-table th {
   text-align: center;
   font-weight: bold;
   vertical-align: middle !important;
 }
-
 .pi-table .center-text {
   text-align: center;
   vertical-align: top;
 }
-
 .pi-table .gray-bg {
   background-color: #a0a0a0 !important;
 }
-
 .pi-table input[type="text"] {
   width: 100%;
   height: 100%;
@@ -463,7 +398,6 @@ body {
   box-sizing: border-box;
   padding: 0;
 }
-
 .vertical-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -472,7 +406,6 @@ body {
   vertical-align: middle !important;
   line-height: 1.2;
 }
-
 .vertical-sub {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -481,7 +414,6 @@ body {
   font-size: 8pt;
   vertical-align: middle !important;
 }
-
 .pi-table input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -496,14 +428,12 @@ body {
   background: transparent;
   outline: none;
 }
-
 .pi-table input[type="checkbox"]:checked::after {
   content: "✓";
   font-size: 18pt;
   font-weight: bold;
   color: #000000;
 }
-
 .page-footer {
   display: flex;
   justify-content: space-between;
@@ -523,17 +453,12 @@ body {
   left: 29px;
   right: 17px;
 }
-
-/* =======================
-   PAGE 3 — RESULT SECTION
-   ======================= */
 .result-table {
   width: 360px;
   border-collapse: collapse;
   margin-top: 12px;
   margin-left: 55px;
 }
-
 .result-table td {
   border: 1px solid #000;
   padding: 8px;
@@ -541,7 +466,6 @@ body {
   font-weight: bold;
   vertical-align: middle;
 }
-
 .result-table td input {
   width: 100%;
   border: none !important;
@@ -557,7 +481,6 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-
 .fraction {
   display: inline-flex;
   flex-direction: column;
@@ -567,26 +490,22 @@ body {
   margin-left: 6px;
   vertical-align: middle;
 }
-
 .fraction .top {
   border-bottom: 1px solid #000;
   width: 100%;
   text-align: center;
   padding: 0 4px;
 }
-
 .fraction .bottom {
   text-align: center;
   padding-top: 2px;
 }
-
 .min-pass-text {
   text-align: center;
   font-size: 9.5pt;
   font-weight: bold;
   margin-top: 15px;
 }
-
 .checkbox-row {
   display: flex;
   justify-content: space-between;
@@ -594,7 +513,6 @@ body {
   font-size: 9pt;
   font-weight: bold;
 }
-
 .sq-checkbox {
   display: inline-block;
   width: 18px;
@@ -604,7 +522,6 @@ body {
   margin-right: 6px;
   position: relative !important;
 }
-
 .sq-checkbox.checked::after {
   content: "✔" !important;
   position: absolute !important;
@@ -615,17 +532,14 @@ body {
   color: #000000 !important;
   line-height: 1 !important;
 }
-
 .remarks-container {
   margin-top: 20px;
 }
-
 .remarks-container h4 {
   font-size: 9pt;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 #remarksToggle {
   width: 100%;
   max-width: 400px;
@@ -635,7 +549,6 @@ body {
   font-family: inherit;
   font-size: 10pt;
 }
-
 .lined-area {
   width: 100%;
   height: 198px;
@@ -655,14 +568,12 @@ body {
   background-size: 100% 22px;
   background-color: transparent;
 }
-
 .remarks-section {
   font-size: 9pt;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 10px;
 }
-
 .sig-block-container {
   display: flex;
   justify-content: space-between;
@@ -670,23 +581,19 @@ body {
   margin-top: 55px;
   margin-bottom: 60px;
 }
-
 .sig-box {
   width: 30%;
   font-size: 10pt;
   line-height: 1.3;
 }
-
 .sig-line {
   width: 100%;
   border-top: 1px solid #000;
   margin-bottom: 7px;
 }
-
 .sig-box div {
   margin-bottom: 2px;
 }
-
 .sig-input-line {
   border: none;
   border-bottom: 1px solid #000;
@@ -695,101 +602,77 @@ body {
   font-size: 10pt;
   width: 120px;
 }
-
 .signature-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 50px;
 }
-
 .signature-notes {
   width: 50%;
   font-size: 9pt;
   line-height: 1.6;
 }
-
 .assessee-sign {
   width: 38%;
   font-size: 10pt;
 }
-
 .assessee-title {
   font-weight: bold;
   margin-bottom: 35px;
 }
-
 .assessee-sign .sig-line {
   margin-bottom: 8px;
 }
-
 .page-container {
   position: relative;
 }
-
 .guide-text {
   font-size: 9pt;
   line-height: 1.35;
   text-align: justify;
 }
-
 .guide-text ol {
   padding-left: 20px;
   margin: 0;
 }
-
 .guide-text ol > li {
   margin-bottom: 7px;
   padding-left: 5px;
 }
-
-/* ============================================
-   PAGE 4: GUIDELINES & INSTRUCTIONS FORMATTING
-   ============================================ */
-
 .guide-text ul {
   list-style-type: none !important;
   padding-left: 0;
   margin-top: 8px;
 }
-
 .guide-text ul li {
   position: relative;
   padding-left: 25px;
   margin-bottom: 4px;
 }
-
 .guide-text .letter {
   position: absolute;
   left: 0;
   font-weight: normal;
 }
-
 .grades-list {
   margin-top: 5px;
   margin-bottom: 3px;
 }
-
 .grade-item {
   display: flex;
   gap: 15px;
   margin-bottom: 2px;
 }
-
 .grade-item span:first-child {
   min-width: 10px;
   font-weight: normal;
 }
-
-/* ==============================================
-   PRINT CSS (HIDDEN ON SCREEN, VISIBLE ON PRINT)
-   ============================================== */
 @media print {
   @page {
     size: A4 portrait;
     margin: 0 !important;
   }
-
   body {
     margin: 0 !important;
     padding: 0 !important;
@@ -797,26 +680,22 @@ body {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-
   .common-navbar,
   .no-print,
   #remarksToggle {
     display: none !important;
     visibility: hidden !important;
   }
-
   .a4-page {
     margin: 0 !important;
     box-shadow: none !important;
     page-break-after: always !important;
     break-after: page !important;
   }
-
   .a4-page:last-child {
     page-break-after: auto !important;
     break-after: auto !important;
   }
-
   tr,
   .sig-block-container,
   .remarks-container,
@@ -825,7 +704,6 @@ body {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
-
   .meta-table .header-row-gray th,
   .meta-table .header-row-gray td,
   .pi-table .gray-bg,
@@ -835,83 +713,108 @@ body {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-
 }
-
-/* =========================================
-   GLOBAL FIX FOR ALL 16 FILES
-   ========================================= */
-
-/* Header & Title Fix */
-.header-top { margin-bottom: 2px !important; padding-bottom: 2px !important; }
-.header-left img { width: 55px !important; }
-.form-title-block { margin-top: 2px !important; margin-bottom: 3px !important; }
-.title-main { margin-bottom: 0px !important; font-size: 11pt !important; }
-.title-sub { margin-bottom: 2px !important; font-size: 8pt !important; line-height: 1.05 !important; }
-.title-unit { margin-top: 2px !important; font-size: 9.5pt !important; }
-
-/* Top Table (Meta Table) Fit */
-.meta-table { margin-bottom: 4px !important; }
-.meta-table th, .meta-table td { padding: 2px 1px !important; font-size: 8pt !important;}
-.meta-table td textarea { height: 26px !important; font-size: 8pt !important; line-height: 1.1 !important; }
-
-/* Name & Airport ko clear dikhane ke liye */
+.header-top {
+  margin-bottom: 2px !important;
+  padding-bottom: 2px !important;
+}
+.header-left img {
+  width: 55px !important;
+}
+.form-title-block {
+  margin-top: 2px !important;
+  margin-bottom: 3px !important;
+}
+.title-main {
+  margin-bottom: 0px !important;
+  font-size: 11pt !important;
+}
+.title-sub {
+  margin-bottom: 2px !important;
+  font-size: 8pt !important;
+  line-height: 1.05 !important;
+}
+.title-unit {
+  margin-top: 2px !important;
+  font-size: 9.5pt !important;
+}
+.meta-table {
+  margin-bottom: 4px !important;
+}
+.meta-table th,
+.meta-table td {
+  padding: 2px 1px !important;
+  font-size: 8pt !important;
+}
+.meta-table td textarea {
+  height: 26px !important;
+  font-size: 8pt !important;
+  line-height: 1.1 !important;
+}
 .meta-table tr:first-child td:nth-child(1) input,
 .meta-table tr:first-child td:nth-child(3) input,
 .meta-table tr:first-child td:nth-child(4) input {
   font-size: 9pt !important;
 }
-
-/* Main Table Fit & <br> Tag Fix */
-.pi-table th, .pi-table td {
-  padding: 2.5px 2px !important;  
-  line-height: 1.1 !important; 
+.pi-table th,
+.pi-table td {
+  padding: 2.5px 2px !important;
+  line-height: 1.1 !important;
   font-size: 8.5pt !important;
 }
-
-/* Page 4 Guidelines */
-.guide-text { font-size: 8.5pt !important; line-height: 1.1 !important; }
-.guide-text ol > li { margin-bottom: 3px !important; }
-.guide-text ul { margin-top: 1px !important; }
-.guide-text ul li { margin-bottom: 1px !important; }
-.grades-list { margin-top: 2px !important; margin-bottom: 2px !important; }
-.grade-item { margin-bottom: 1px !important; }
-
-/* =========================================
-   FINAL FIX 1: MANAGER NAME & DATE FITTING
-   ========================================= */
-/* Controller aur Examiner ke Name ko shrink kiya taaki 35+ characters fit hon */
+.guide-text {
+  font-size: 8.5pt !important;
+  line-height: 1.1 !important;
+}
+.guide-text ol > li {
+  margin-bottom: 3px !important;
+}
+.guide-text ul {
+  margin-top: 1px !important;
+}
+.guide-text ul li {
+  margin-bottom: 1px !important;
+}
+.grades-list {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+.grade-item {
+  margin-bottom: 1px !important;
+}
 .meta-table .name-desig-input,
-.meta-table input#cName, 
+.meta-table input#cName,
 .meta-table input#eName {
-    font-size: 6.5pt !important;
-    letter-spacing: -0.3px !important;
-    padding: 0 1px !important;
+  font-size: 6.5pt !important;
+  letter-spacing: -0.3px !important;
+  padding: 0 1px !important;
 }
-
-/* =========================================
-   FINAL FIX 2: PAGE 4 (LAST PAGE) FONT BADA KIYA
-   ========================================= */
-/* Guidelines ko bada kiya taaki page bhara hua dikhe */
-.guide-text { 
-    font-size: 9.0pt !important; /* Font size badhaya */
-    line-height: 1.4 !important; /* Lines ke beech ka gap badhaya */
+.guide-text {
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
 }
-.guide-text ol > li { margin-bottom: 6px !important; }
-.guide-text ul { margin-top: 3px !important; }
-.guide-text ul li { margin-bottom: 3px !important; }
-.grades-list { margin-top: 5px !important; margin-bottom: 5px !important; }
-.grade-item { margin-bottom: 3px !important; }
-
-/* =========================================
-   MOBILE DATE FIT (plain text field, no native picker)
-   ========================================= */
+.guide-text ol > li {
+  margin-bottom: 6px !important;
+}
+.guide-text ul {
+  margin-top: 3px !important;
+}
+.guide-text ul li {
+  margin-bottom: 3px !important;
+}
+.grades-list {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+.grade-item {
+  margin-bottom: 3px !important;
+}
 .meta-table input.date-field {
-    font-size: 7.5px !important;
-    letter-spacing: -0.5px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
+  font-size: 7.5px !important;
+  letter-spacing: -0.5px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
 }
