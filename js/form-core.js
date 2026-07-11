@@ -103,6 +103,64 @@ document.addEventListener("DOMContentLoaded", function () {
   setupAutoFill("cName", "cLicence", CONTROLLER_LIST);
   setupAutoFill("eName", "eLicence", EXAMINER_LIST);
 
+  // ---- Hybrid Date Field: calendar-tap select + auto "/" while typing ----
+  function setupDateFields() {
+    document.querySelectorAll("input.date-field").forEach((textInput) => {
+      if (textInput.dataset.dateEnhanced) return;
+      textInput.dataset.dateEnhanced = "true";
+
+      const wrap = document.createElement("span");
+      wrap.className = "date-wrap";
+      textInput.parentNode.insertBefore(wrap, textInput);
+      wrap.appendChild(textInput);
+
+      const hiddenDate = document.createElement("input");
+      hiddenDate.type = "date";
+      hiddenDate.className = "date-hidden-picker";
+      hiddenDate.tabIndex = -1;
+      hiddenDate.setAttribute("aria-hidden", "true");
+      wrap.appendChild(hiddenDate);
+
+      const pickBtn = document.createElement("button");
+      pickBtn.type = "button";
+      pickBtn.className = "date-pick-btn no-print";
+      pickBtn.setAttribute("aria-label", "Pick date from calendar");
+      pickBtn.innerHTML = "&#128197;"; // 📅
+      wrap.appendChild(pickBtn);
+
+      // Manual typing: digits only, "/" auto-inserted after DD and MM
+      textInput.addEventListener("input", function () {
+        const digits = this.value.replace(/\D/g, "").slice(0, 8);
+        if (digits.length > 4) {
+          this.value = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+        } else if (digits.length > 2) {
+          this.value = digits.slice(0, 2) + "/" + digits.slice(2);
+        } else {
+          this.value = digits;
+        }
+      });
+
+      // Calendar button opens the native (invisible) date picker
+      pickBtn.addEventListener("click", function () {
+        if (typeof hiddenDate.showPicker === "function") {
+          hiddenDate.showPicker();
+        } else {
+          hiddenDate.focus();
+          hiddenDate.click();
+        }
+      });
+
+      // Date picked from calendar -> fill visible field as DD/MM/YYYY
+      hiddenDate.addEventListener("change", function () {
+        if (!this.value) return;
+        const [y, m, d] = this.value.split("-");
+        textInput.value = `${d}/${m}/${y}`;
+        textInput.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+    });
+  }
+  setupDateFields();
+
   const remarksToggle = document.getElementById("remarksToggle");
   const txtRemarks = document.getElementById("txtRemarks");
 
