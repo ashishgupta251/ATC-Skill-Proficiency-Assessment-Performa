@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const user = JSON.parse(sessionStorage.getItem("user"));
-
   if (!user) {
     window.location.href = "../index.html";
     return;
   }
-
   const navbarHTML = `
     <div class="common-navbar no-print">
       <div class="nav-left">
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
   document.body.insertAdjacentHTML("afterbegin", navbarHTML);
-
   function updateUTC() {
     const now = new Date();
     const utcTime = now.toISOString().substring(11, 19);
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   setInterval(updateUTC, 1000);
   updateUTC();
-
   const logoutBtn = document.getElementById("globalLogoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
@@ -46,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../index.html";
     });
   }
-
   const controllerListEl = document.getElementById("controllerList");
   if (controllerListEl && typeof CONTROLLER_LIST !== "undefined") {
     CONTROLLER_LIST.forEach((emp) => {
@@ -57,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   const examinerListEl = document.getElementById("examinerList");
   if (examinerListEl && typeof EXAMINER_LIST !== "undefined") {
     EXAMINER_LIST.forEach((emp) => {
@@ -68,15 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   function setupAutoFill(inputId, licenceId, listData) {
     const inputEl = document.getElementById(inputId);
     const licenceEl = document.getElementById(licenceId);
-
     if (inputEl && licenceEl) {
       inputEl.addEventListener("input", function () {
         const selectedValue = this.value;
-
         if (typeof listData !== "undefined") {
           const matchedEmp = listData.find(
             (emp) => emp.display === selectedValue,
@@ -90,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             licenceEl.value = "";
           }
         }
-
         if (inputId === "cName") {
           let cleanName = selectedValue.split(" (")[0];
           const sigLabel = document.getElementById("lblAssesseeName");
@@ -99,48 +89,43 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
-
   setupAutoFill("cName", "cLicence", CONTROLLER_LIST);
   setupAutoFill("eName", "eLicence", EXAMINER_LIST);
-
-  // ---- Hybrid Date Field: calendar-tap select + auto "/" while typing ----
   function setupDateFields() {
     document.querySelectorAll("input.date-field").forEach((textInput) => {
       if (textInput.dataset.dateEnhanced) return;
       textInput.dataset.dateEnhanced = "true";
-
       const wrap = document.createElement("span");
       wrap.className = "date-wrap";
       textInput.parentNode.insertBefore(wrap, textInput);
       wrap.appendChild(textInput);
-
       const hiddenDate = document.createElement("input");
       hiddenDate.type = "date";
       hiddenDate.className = "date-hidden-picker";
       hiddenDate.tabIndex = -1;
       hiddenDate.setAttribute("aria-hidden", "true");
       wrap.appendChild(hiddenDate);
-
       const pickBtn = document.createElement("button");
       pickBtn.type = "button";
       pickBtn.className = "date-pick-btn no-print";
       pickBtn.setAttribute("aria-label", "Pick date from calendar");
-      pickBtn.innerHTML = "&#128197;"; // 📅
+      pickBtn.innerHTML = "&#128197;";
       wrap.appendChild(pickBtn);
-
-      // Manual typing: digits only, "/" auto-inserted after DD and MM
       textInput.addEventListener("input", function () {
         const digits = this.value.replace(/\D/g, "").slice(0, 8);
         if (digits.length > 4) {
-          this.value = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+          this.value =
+            digits.slice(0, 2) +
+            "/" +
+            digits.slice(2, 4) +
+            "/" +
+            digits.slice(4);
         } else if (digits.length > 2) {
           this.value = digits.slice(0, 2) + "/" + digits.slice(2);
         } else {
           this.value = digits;
         }
       });
-
-      // Calendar button opens the native (invisible) date picker
       pickBtn.addEventListener("click", function () {
         if (typeof hiddenDate.showPicker === "function") {
           hiddenDate.showPicker();
@@ -149,8 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
           hiddenDate.click();
         }
       });
-
-      // Date picked from calendar -> fill visible field as DD/MM/YYYY
       hiddenDate.addEventListener("change", function () {
         if (!this.value) return;
         const [y, m, d] = this.value.split("-");
@@ -160,10 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   setupDateFields();
-
   const remarksToggle = document.getElementById("remarksToggle");
   const txtRemarks = document.getElementById("txtRemarks");
-
   if (remarksToggle && txtRemarks) {
     remarksToggle.addEventListener("change", function () {
       if (this.value !== "") {
@@ -176,21 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   const form = document.getElementById("proficiencyForm");
   const savePdfBtn = document.getElementById("globalSavePdfBtn");
-
   if (savePdfBtn && form) {
     savePdfBtn.addEventListener("click", function () {
       if (!form.reportValidity()) return;
-
       let allFilled = true;
       let firstMissingRow = null;
-
       const gradingRows = Array.from(
         document.querySelectorAll(".pi-table tbody tr"),
       ).filter((row) => row.querySelector('input[type="checkbox"]'));
-
       gradingRows.forEach((row) => {
         const isChecked = row.querySelector('input[type="checkbox"]:checked');
         if (!isChecked) {
@@ -201,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
           row.style.backgroundColor = "";
         }
       });
-
       if (!allFilled) {
         alert(
           "Incomplete Form! Please select a grade for all Performance Identifiers to continue.",
@@ -209,12 +184,10 @@ document.addEventListener("DOMContentLoaded", function () {
         firstMissingRow.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
-
       const originalBtnHtml = savePdfBtn.innerHTML;
       savePdfBtn.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Generating PDF...';
       savePdfBtn.style.pointerEvents = "none";
-
       setTimeout(() => {
         window.print();
         savePdfBtn.innerHTML = originalBtnHtml;
