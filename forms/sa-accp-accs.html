@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SA Form - ACC (P) and ACC (S) Combined</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/form.css" />
+   <style>
+      .fraction {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+        margin: 0 5px;
+        font-size: 10pt;
+        font-weight: bold;
+      }
+      .fraction .top {
+        border-bottom: 1.5px solid #000;
+        padding: 0 4px;
+      }
+      .fraction .bottom {
+        padding: 0 4px;
+      }
+
+      /* =========================================
+         ULTIMATE SHRINK FIX: Page 1 & 2 Overflow Rokne Ke Liye
+         ========================================= */
+      .header-top {
+        margin-bottom: 2px !important;
+        padding-bottom: 2px !important;
+      }
+      .header-left img {
+        width: 60px !important; 
+      }
+      .form-title-block {
+        margin-top: 2px !important;
+        margin-bottom: 3px !important;
+      }
+      .title-main { margin-bottom: 0px !important; font-size: 11.5pt !important; }
+      .title-sub { margin-bottom: 2px !important; font-size: 8.5pt !important; line-height: 1.1 !important; }
+      .title-unit { margin-top: 2px !important; font-size: 10pt !important; }
+
+      /* Top Table Fit */
+      .meta-table { margin-bottom: 4px !important; }
+      .meta-table th, .meta-table td { padding: 2px 1px !important; font-size: 8pt !important;}
+      .meta-table td textarea { height: 26px !important; font-size: 7.5pt !important; line-height: 1.1 !important; }
+      .meta-table tr:first-child td:nth-child(1) input,
+      .meta-table tr:first-child td:nth-child(3) input,
+      .meta-table tr:first-child td:nth-child(4) input {
+        font-size: 9pt !important;
+      }
+
+      /* Main Table Fit - Extra tight kyunki rows bohot hain */
+      .pi-table th, .pi-table td {
+        padding: 2px 1.5px !important;  
+        line-height: 1.05 !important; 
+        font-size: 8pt !important;
+      }
+      
+      /* Page 4 Guidelines Fit */
+      .guide-text {
+        font-size: 8.5pt !important;
+        line-height: 1.1 !important;
+      }
+      .guide-text ol > li { margin-bottom: 3px !important; }
+      .guide-text ul { margin-top: 1px !important; }
+      .guide-text ul li { margin-bottom: 1px !important; }
+      .grades-list { margin-top: 2px !important; margin-bottom: 2px !important; }
+      .grade-item { margin-bottom: 1px !important; }
+    </style>
+  </head>
+  <body>
+    <datalist id="controllerList"></datalist>
+    <datalist id="examinerList"></datalist>
+    <form id="proficiencyForm">
+      <div class="a4-page">
+        <div class="header-top">
+          <div class="header-left">
+            <img
+              src="../assets/logo.png"
+              alt="AAI Logo"
+              onerror="this.style.display = 'none'"
+            />
+            <h1>
+              भारतीय विमानपत्तन प्राधिकरण<br />AIRPORTS AUTHORITY OF INDIA
+            </h1>
+          </div>
+          <div class="header-right">Form: CAP-04/017A</div>
+        </div>
+        <div class="form-title-block">
+          <div class="title-main">Skill Assessment Proforma</div>
+          <div class="title-sub">
+            (To be printed either on an A3 sheet in the booklet form or on both
+            sides on A4 sheets pasted together on the longer edge. Not to be
+            used in single side print and lose/stapled sheets)
+          </div>
+          <div class="title-unit">
+            AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE (COMBINED)
+          </div>
+        </div>
+        <table class="meta-table">
+          <colgroup>
+            <col style="width: 28%" />
+            <col style="width: 6%" />
+            <col style="width: 8%" />
+            <col style="width: 8%" />
+            <col style="width: 28%" />
+            <col style="width: 6%" />
+            <col style="width: 8%" />
+            <col style="width: 8%" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td colspan="1">
+                Airport:<br />
+                <input
+                  type="text"
+                  placeholder="Enter Airport"
+                  value="Jaipur International Airport"
+                  style="font-size: 10pt"
+                />
+              </td>
+              <td colspan="3">
+                Unit:<br />
+                <textarea
+                  rows="2"
+                  spellcheck="false"
+                  placeholder="Enter Unit Name"
+                >
+AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
+                >
+              </td>
+              <td colspan="1">
+                Date:<br />
+                <input type="text" class="date-field" id="checkDate" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY" />
+              </td>
+              <td colspan="3">
+                Period:<br />
+                <input
+                  type="text"
+                  id="checkPeriod"
+                  placeholder="e.g. 0900 - 1100 Z"
+                  value=""
+                  style="font-size: 10pt"
+                />
+              </td>
+            </tr>
+            <tr class="header-row-gray">
+              <th colspan="4" style="text-align: center">
+                Details of Controller
+              </th>
+              <th colspan="4" style="text-align: center">
+                Details of Examiner
+              </th>
+            </tr>
+            <tr class="header-row-gray">
+              <th rowspan="2" style="text-align: center; font-size: 8.5pt">
+                Name &amp; Designation
+              </th>
+              <th rowspan="2" style="text-align: center; font-size: 7.5pt">
+                Licence<br />No.
+              </th>
+              <th colspan="2" style="text-align: center; font-size: 8.5pt">
+                Validity
+              </th>
+              <th rowspan="2" style="text-align: center; font-size: 8.5pt">
+                Name &amp; Designation
+              </th>
+              <th rowspan="2" style="text-align: center; font-size: 7.5pt">
+                Licence<br />No.
+              </th>
+              <th colspan="2" style="text-align: center; font-size: 8.5pt">
+                Validity
+              </th>
+            </tr>
+            <tr class="header-row-gray">
+              <th style="text-align: center; font-size: 8.5pt">Licence</th>
+              <th style="text-align: center; font-size: 8.5pt">Medical</th>
+              <th style="text-align: center; font-size: 8.5pt">Licence</th>
+              <th style="text-align: center; font-size: 8.5pt">Medical</th>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  id="cName"
+                  class="name-desig-input"
+                  list="controllerList"
+                  required
+                  autocomplete="off"
+                  placeholder="Select Controller"
+                  style="
+                    font-size: 7.5pt;
+                    font-family: &quot;Arial Narrow&quot;, Arial, sans-serif;
+                    letter-spacing: -0.5px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0 2px;
+                    font-weight: 600;
+                  "
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="cLicence"
+                  style="
+                    text-align: center;
+                    font-weight: normal;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0;
+
+                  "
+                  readonly
+                  placeholder="Auto"
+                />
+              </td>
+              <td>
+                <input
+                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  id="cLicenceVal"
+                  style="width: 100%; box-sizing: border-box; padding: 0"
+                />
+              </td>
+              <td>
+                <input
+                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  id="cMedicalVal"
+                  style="width: 100%; box-sizing: border-box; padding: 0"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="eName"
+                  class="name-desig-input"
+                  list="examinerList"
+                  required
+                  autocomplete="off"
+                  placeholder="Select Examiner"
+                  style="
+                    font-size: 7.5pt;
+                    font-family: &quot;Arial Narrow&quot;, Arial, sans-serif;
+                    letter-spacing: -0.5px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0 2px;
+                    font-weight: 600;
+                  "
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="eLicence"
+                  style="
+                    text-align: center;
+                    font-weight: normal;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0;
+                  "
+                  readonly
+                  placeholder="Auto"
+                />
+              </td>
+              <td>
+                <input
+                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  id="eLicenceVal"
+                  style="width: 100%; box-sizing: border-box; padding: 0"
+                />
+              </td>
+              <td>
+                <input
+                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  id="eMedicalVal"
+                  style="width: 100%; box-sizing: border-box; padding: 0"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="pi-table">
+          <colgroup>
+            <col style="width: 8%" />
+            <col style="width: 14%" />
+            <col style="width: 6%" />
+            <col style="width: 47%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th colspan="2" rowspan="2">Performance Area</th>
+              <th rowspan="2">SN</th>
+              <th rowspan="2">Performance Identifier</th>
+              <th colspan="5">Grade</th>
+            </tr>
+            <tr>
+              <th>5</th>
+              <th>4</th>
+              <th>3</th>
+              <th>2</th>
+              <th>1</th>
+            </tr>
+            <tr>
+              <td colspan="2" rowspan="2" class="vertical-text">
+                SAFETY<br />PERFORMANCE<br />AREA
+              </td>
+              <td class="center-text">1.</td>
+              <td style="text-align: justify">
+                Impending conflicting traffic and <br />infringement of SUAs
+                &amp; terrain clearance<br />
+                detected and resolved.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td class="gray-bg"><input type="checkbox" /></td>
+              <td class="gray-bg"><input type="checkbox" /></td>
+              <td class="gray-bg"><input type="checkbox" /></td>
+              <td class="gray-bg"><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">2.</td>
+              <td style="text-align: justify">
+                The applied separation is appropriate taking <br />into account
+                safety &amp; efficiency.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td rowspan="8" class="vertical-text">SKILL</td>
+              <td rowspan="3" class="vertical-sub">
+                Procedural and Surveillance<br />techniques (Area Control)
+              </td>
+              <td class="center-text">3.</td>
+              <td style="text-align: justify">
+                Established communication promptly with <br />aircraft entering
+                jurisdiction, Aircraft <br />Identified early and Identity
+                maintained.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">4.</td>
+              <td style="text-align: justify">
+                Issue clearances for arriving, departing and <br />overflying
+                aircraft (including to and from <br />satellite station),
+                Planned for expeditious <br />descend and climb vis-à-vis
+                sequence and/or <br />conflicting traffic to maintain a safe and
+                <br />orderly traffic flow with least average delay.
+                <br />Aircraft vectored by most optimum routing
+                <br />considering least average delay/ sequence / <br />track
+                mileage/ requested route/ level.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">5.</td>
+              <td style="text-align: justify">
+                Monitored and maintained speed/vertical <br />profile of
+                aircraft appropriate to the phase of <br />flight, as per
+                published procedure and situational Requirement, allocated
+                optimal <br />levels to aircraft.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td rowspan="3" class="vertical-sub">
+                Phraseologies and<br />communication skills
+              </td>
+              <td class="center-text">6.#</td>
+              <td style="text-align: justify">
+                Made use of correct phraseologies or used <br />appropriate
+                pre-formatted messages and <br />used minimum plain language
+                text in CPDLC.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">7.</td>
+              <td style="text-align: justify">
+                Instructions were concise and unambiguous <br />and used correct
+                rate of speech and <br />radiotelephony technique.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">8.</td>
+              <td style="text-align: justify">
+                Used correct call signs, Read-backs <br />monitored and errors
+                corrected quickly.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="vertical-sub">
+                Coordination<br />Procedures
+              </td>
+              <td class="center-text">9.</td>
+              <td style="text-align: justify">
+                Coordination with other ATC units/agencies <br />performed
+                effectively in English and in <br />adherence to SOP/ Local
+                instructions.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">10.#</td>
+              <td style="text-align: justify">
+                Initiated and accepted transfer of <br />control/communication
+                promptly and <br />terminated surveillance service timely. Where
+                <br />applicable timely responded to AFN LOGON <br />and
+                established ADS-CPDLC connection <br />promptly with aircraft,
+                forwarded AFN logon <br />to next ATS unit.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="page-footer">
+          <span>22-June-2023</span>
+          <span>Skill Assessment Proforma-ACC (P) and ACC(S)(Combined)</span>
+          <span>Page 1 of 4</span>
+        </div>
+      </div>
+      <div class="a4-page">
+        <div class="header-top">
+          <div class="header-left">
+            <img
+              src="../assets/logo.png"
+              alt="AAI Logo"
+              onerror="this.style.display = 'none'"
+            />
+            <h1>
+              भारतीय विमानपत्तन प्राधिकरण<br />AIRPORTS AUTHORITY OF INDIA
+            </h1>
+          </div>
+          <div class="header-right">Form: CAP-04/017A</div>
+        </div>
+        <table class="pi-table">
+          <colgroup>
+            <col style="width: 8%" />
+            <col style="width: 14%" />
+            <col style="width: 6%" />
+            <col style="width: 47%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td rowspan="4"></td>
+              <td rowspan="4" class="vertical-sub">
+                Use of Automation tools and<br />other resources
+              </td>
+              <td class="center-text">11.#</td>
+              <td style="text-align: justify">
+                Promptly updated CPL data and CFL in data <br />block and
+                FPS/EFS when required, or passed <br />required information to
+                concerned ATC Unit <br />based on position report/ADS-CPDLC as
+                per <br />published procedure.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">12.</td>
+              <td style="text-align: justify">
+                Kept all the data blocks separated.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">13.</td>
+              <td style="text-align: justify">
+                Used available resources (Min Sep/ RBLs etc.)<br />
+                for optimum results and manage the FPS/EFS <br />effectively
+                whenever applicable.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">14.</td>
+              <td style="text-align: justify">
+                Acknowledged and Monitored all <br />alerts/alarms on
+                ADS-CPDLC/any other<br />
+                Automation system and/or by other agency <br />and took
+                appropriate action.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td
+                colspan="2"
+                rowspan="7"
+                class="vertical-text"
+                style="line-height: 1.8"
+              >
+                ATTRIBUTES/OBSERVABLE BEHAVIOUR<br />
+                <span style="font-size: 8.5pt"
+                  >(Maintaining attention, situational awareness and Work
+                  load)</span
+                >
+              </td>
+              <td class="center-text">15.</td>
+              <td style="text-align: justify">
+                Maintained situational awareness at all times<br />
+                and scanned the area of jurisdiction <br />effectively.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">16.</td>
+              <td style="text-align: justify">
+                Shifted attention between various aircraft<br />
+                as required, prioritized activities according<br />
+                to situation and responded to pilot's request<br />
+                promptly.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">17.</td>
+              <td style="text-align: justify">
+                Stayed calm, focused and handled workload<br />
+                efficiently, took appropriate action upon <br />significant
+                changes in meteorological <br />conditions/ status of
+                equipment<br />/facilities / aerodromes etc.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">18.*</td>
+              <td style="text-align: justify">
+                Handled unexpected situations effectively.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">19.*</td>
+              <td style="text-align: justify">
+                Recognized and responded to deviations <br />from ATC clearances
+                promptly.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">20.*</td>
+              <td style="text-align: justify">
+                Exhibited team member attributes and<br />
+                adapted to unusual situation occurring in<br />
+                other unit.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">21.*</td>
+              <td style="text-align: justify">
+                Received and gave complete position relief<br />
+                briefing.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" rowspan="4" class="vertical-text">KNOWLEDGE</td>
+              <td class="center-text">22.</td>
+              <td style="text-align: justify">
+                Application of separation
+                <br />standards/Equipment/Tools/displays<br />
+                available in the unit/working position, <br />knowledge of
+                Airspace/Aerodrome Data/<br />
+                IAL Procedures / Aircraft Performance and<br />
+                characteristics etc.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">23.</td>
+              <td style="text-align: justify">
+                Source of information (Awareness<br />
+                /knowledge of relevant documents such as<br />
+                ICAO Docs, Aerodrome Manual, <br />contingency/emergency plans
+                and<br />
+                procedures, Docs Issued by DGCA/AAI, AIPs,<br />
+                NOTAMs etc.).
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td class="center-text">24.</td>
+              <td style="text-align: justify">
+                Application of surveillance technique and<br />
+                separation Standards.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <br />
+            </tr>
+            <tr>
+              <td class="center-text">25.</td>
+              <td style="text-align: justify">
+                Unusual Occurrences and contingency<br />
+                procedures.
+              </td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="page-footer">
+          <span>22-June-2023</span>
+          <span>Skill Assessment Proforma-ACC (P) and ACC(S)(Combined)</span>
+          <span>Page 2 of 4</span>
+        </div>
+      </div>
+      <div class="a4-page">
+        <div class="header-top">
+          <div class="header-left">
+            <img
+              src="../assets/logo.png"
+              alt="AAI Logo"
+              onerror="this.style.display = 'none'"
+            />
+            <h1>
+              भारतीय विमानपत्तन प्राधिकरण<br />AIRPORTS AUTHORITY OF INDIA
+            </h1>
+          </div>
+          <div class="header-right">Form: CAP-04/017A</div>
+        </div>
+        <div style="font-weight: bold; font-size: 10pt; margin-top: 10px">
+          Result :
+        </div>
+        <table class="result-table">
+          <tr>
+            <td style="width: 50%">Marks obtained (M)</td>
+            <td>
+              <input
+                type="text"
+                id="outMarks"
+                readonly
+                style="font-weight: bold; text-align: center"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Percentage =
+              <div class="fraction">
+                <span class="top">M x 100</span>
+                <span class="bottom">125</span>
+              </div>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="outPercentage"
+                readonly
+                style="font-weight: bold; text-align: center"
+              />
+            </td>
+          </tr>
+        </table>
+        <div
+          style="
+            font-weight: bold;
+            font-size: 9.5pt;
+            margin-top: 15px;
+            margin-left: 103px;
+          "
+        >
+          (Minimum pass marks are 80%)
+        </div>
+        <div class="checkbox-row">
+          <div>
+            <span class="sq-checkbox" id="chkPass"></span> Demonstrated
+            competency
+          </div>
+          <div>
+            <span class="sq-checkbox" id="chkFail"></span> Did not demonstrate
+            competency
+          </div>
+        </div>
+        <div class="remarks-container" style="margin-top: 20px">
+          <h4>Remarks of the Chairman of the Board:</h4>
+          <select
+            id="remarksToggle"
+            class="no-print"
+            style="
+              width: 100%;
+              max-width: 400px;
+              padding: 6px;
+              margin-bottom: 10px;
+              border: 1px solid #ccc;
+              font-family: inherit;
+              font-size: 10pt;
+            "
+          >
+            <option value="">-- Select Remark --</option>
+            <option value="Satisfactory Performance">Satisfactory Performance</option>
+            <option value="Good Performance">Good Performance</option>
+            <option value="Average Performance">Average Performance</option>
+          </select>
+          <textarea
+            id="txtRemarks"
+            class="lined-area"
+            rows="9"
+            placeholder="Remarks will appear here..."
+          ></textarea>
+        </div>
+        <div class="sig-block-container">
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div>(SIGNATURE)</div>
+            <div>NAME:&nbsp;</div>
+            <div>DESIGNATION:&nbsp;</div>
+            <div>CHAIRMAN</div>
+          </div>
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div>(SIGNATURE)</div>
+            <div>NAME:&nbsp;</div>
+            <div>DESIGNATION:&nbsp;</div>
+            <div>MEMBER-1</div>
+          </div>
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div>(SIGNATURE)</div>
+            <div>NAME:&nbsp;</div>
+            <div>DESIGNATION:&nbsp;</div>
+            <div>MEMBER-2</div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+          "
+        >
+          <div style="width: 50%"></div>
+          <div style="width: 40%; font-size: 9.5pt">
+            <div style="font-weight: bold; margin-bottom: 80px">
+              Signatures of trainee:
+            </div>
+            <div class="sig-line"></div>
+            <div>(SIGNATURE)</div>
+            <div>
+              NAME:
+              <input
+                type="text"
+                id="lblAssesseeName"
+                class="sig-input-line"
+                readonly
+                style="width: 150px; font-weight: bold; color: black"
+              />
+            </div>
+            <div>DESIGNATION:&nbsp;</div>
+          </div>
+        </div>
+        <div class="page-footer">
+          <span>22-June-2023</span>
+          <span>Skill Assessment Proforma-ACC (P) and ACC(S)(Combined)</span>
+          <span>Page 3 of 4</span>
+        </div>
+      </div>
+      <div class="a4-page">
+        <div class="header-top">
+          <div class="header-left">
+            <img
+              src="../assets/logo.png"
+              alt="AAI Logo"
+              onerror="this.style.display = 'none'"
+            />
+            <h1>
+              भारतीय विमानपत्तन प्राधिकरण<br />AIRPORTS AUTHORITY OF INDIA
+            </h1>
+          </div>
+          <div class="header-right">Form: CAP-04/017A</div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            font-weight: bold;
+            font-size: 10.5pt;
+            margin-top: 5px;
+            margin-bottom: 15px;
+          "
+        >
+          Guidelines and Instructions for filling up the Skill Assessment
+          Proforma
+        </div>
+        <div class="guide-text" style="text-align: justify">
+          <ol>
+            <li>
+              <strong>Grading method:</strong>
+              <ul>
+                <li>
+                  <span class="letter">i)</span> A trainee controller is
+                  assessed in following four competency areas:<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;a) Safety Performance<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;b) Skill<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;c) Attributes/Observable Behaviour
+                  (Maintaining attention, situational awareness and handling
+                  <br />Workload) and<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;d) Knowledge
+                </li>
+                <li>
+                  <span class="letter">ii)</span> Each competency area has
+                  Competency Identifiers (CI) which are serially numbered and
+                  are assessed <br />according to the grades shown against them.
+                </li>
+                <li>
+                  <span class="letter">iii)</span> Only one grade is to be
+                  ticked (&radic;) against one Competency identifier (CI).
+                </li>
+                <li>
+                  <span class="letter">iv)</span> Competency Identifiers marked
+                  with asterisk (*) shall be "Theoretically Assessed" if not
+                  practically<br />
+                  observed during the assessment, and the same shall be graded
+                  in respective competency identifier <br />(CI) field.
+                </li>
+                <li>
+                  <span class="letter">v)</span> Competency Identifiers marked
+                  with hash (#) will be assessed separately on SDD and/or
+                  ADS-CPDLC<br />
+                  system, the same shall be graded in respective competency
+                  identifier (CI) field.
+                </li>
+                <li>
+                  <span class="letter">vi)</span> Shaded columns under the
+                  "Grades" column are indicative of
+                  unacceptable/unsatisfactory<br />
+                  performance in that competency identifier (CI).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Description of grades:</strong> The grades indicated
+              against each competency identifier (CI) shall carry the<br />
+              following meaning.<br />
+              <div class="grades-list">
+                <div class="grade-item">
+                  <span>5</span>
+                  <span
+                    >Demonstrated competency at a level appropriate to the
+                    privileges at all times.</span
+                  >
+                </div>
+                <div class="grade-item">
+                  <span>4</span>
+                  <span
+                    >Demonstrated competency at a level appropriate to the
+                    privileges most of the times</span
+                  >
+                </div>
+                <div class="grade-item">
+                  <span>3</span>
+                  <span
+                    >Demonstrated competency at a level appropriate to the
+                    privileges but occasionally could have<br />
+                    impacted efficiency.</span
+                  >
+                </div>
+                <div class="grade-item">
+                  <span>2</span>
+                  <span
+                    >Demonstrated competency at a level appropriate to the
+                    privileges but occasionally could have <br />impacted
+                    safety.</span
+                  >
+                </div>
+                <div class="grade-item">
+                  <span>1</span>
+                  <span
+                    >Demonstrated competency at a level appropriate to the
+                    privileges but occasionally could have impacted
+                    <br />efficiency and safety both.</span
+                  >
+                </div>
+              </div>
+              <em
+                >Note: Grade 1, 2 or 3 in a competency identifier (except in
+                case of competency identifier 01) shall not<br />
+                automatically disqualify an assessee if the assessee has taken a
+                timely corrective action to avoid any impact<br />
+                on efficiency and/or safety.</em
+              >
+            </li>
+            <li>
+              <strong>Marking Scheme</strong>
+              <ul>
+                <li>
+                  <span class="letter">a)</span> Grade 5, 4, 3, 2 &amp; 1 shall
+                  carry "5", "4", "3", "2" &amp; "1" marks respectively in the
+                  competency Identifiers.
+                </li>
+                <li>
+                  <span class="letter">b)</span> Marks obtained in all the
+                  competency identifiers shall be added at the end of assessment
+                  and percentage<br />
+                  shall be calculated as shown in the table under section
+                  "Result".
+                </li>
+                <li>
+                  <span class="letter">c)</span>
+                  <strong>Minimum pass percentage is 80%.</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Result:</strong> The terms used for "Result" in the skill
+              assessment proforma are defined as follows:
+              <ul>
+                <li>
+                  <span class="letter">a)</span>
+                  <strong>Demonstrated competency:</strong> It indicates that
+                  the applicant has demonstrated, at a level appropriate to<br />
+                  the privileges being granted by that rating; the skills,
+                  judgement and performance required to provide <br />a safe,
+                  orderly and expeditious air traffic control service in that
+                  unit, including the recognition and<br />
+                  management of threats and errors.
+                </li>
+                <li>
+                  <span class="letter">b)</span>
+                  <strong>Did not demonstrate competency:</strong> It indicates
+                  that the applicant has not demonstrated, at a level<br />
+                  appropriate to the privileges being granted by that rating;
+                  the skills, judgement and performance <br />required to
+                  provide a safe, orderly and expeditious air traffic control
+                  service in that unit, including the<br />
+                  recognition and management of threats and errors.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong
+                >Grade less than 5 in the Competency Identifier 01 is an
+                unacceptable performance and the trainee<br />
+                controller shall be treated as having <u>failed</u> (i.e. Did
+                not demonstrate competency) in the skill<br />
+                assessment.</strong
+              >
+            </li>
+          </ol>
+        </div>
+        <div class="page-footer">
+          <span>22-June-2023</span>
+          <span>Skill Assessment Proforma-ACC (P) and ACC(S)(Combined)</span>
+          <span>Page 4 of 4</span>
+        </div>
+      </div>
+    </form>
+    <script src="../data/roster.js"></script>
+    <script src="../js/calculator.js"></script>
+    <script src="../js/form-core.js"></script>
+  </body>
+</html>
