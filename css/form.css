@@ -320,15 +320,69 @@ body {
 }
 
 /* Date fields ab plain text inputs hain (DD/MM/YYYY) taaki mobile par
-   koi native calendar icon/arrow render na ho. */
+   koi native calendar icon/arrow render na ho. Ek chhota calendar button
+   (JS se add hota hai) tap karne par background me chhupa hua native
+   date input khulta hai aur date wapas is text field me DD/MM/YYYY
+   format me daal deta hai. */
 .meta-table input.date-field {
   font-size: 7.5pt !important;
   letter-spacing: -0.5px !important;
   text-align: center !important;
-  padding: 0 !important;
+  padding: 0 2px 0 0 !important;
   margin: 0 !important;
   width: 100%;
   box-sizing: border-box;
+}
+
+.date-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.date-wrap input.date-field {
+  padding-right: 11px !important;
+}
+
+.date-pick-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 10px;
+  height: 10px;
+  line-height: 1;
+  font-size: 7px;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-hidden-picker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+@media print {
+  .date-pick-btn,
+  .date-hidden-picker {
+    display: none !important;
+  }
 }
 
 .pi-table {
