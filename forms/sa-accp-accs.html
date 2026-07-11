@@ -9,7 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../css/form.css" />
-   <style>
+    <style>
       .fraction {
         display: inline-flex;
         flex-direction: column;
@@ -26,52 +26,74 @@
       .fraction .bottom {
         padding: 0 4px;
       }
-
-      /* =========================================
-         ULTIMATE SHRINK FIX: Page 1 & 2 Overflow Rokne Ke Liye
-         ========================================= */
       .header-top {
         margin-bottom: 2px !important;
         padding-bottom: 2px !important;
       }
       .header-left img {
-        width: 60px !important; 
+        width: 60px !important;
       }
       .form-title-block {
         margin-top: 2px !important;
         margin-bottom: 3px !important;
       }
-      .title-main { margin-bottom: 0px !important; font-size: 11.5pt !important; }
-      .title-sub { margin-bottom: 2px !important; font-size: 8.5pt !important; line-height: 1.1 !important; }
-      .title-unit { margin-top: 2px !important; font-size: 10pt !important; }
-
-      /* Top Table Fit */
-      .meta-table { margin-bottom: 4px !important; }
-      .meta-table th, .meta-table td { padding: 2px 1px !important; font-size: 8pt !important;}
-      .meta-table td textarea { height: 26px !important; font-size: 7.5pt !important; line-height: 1.1 !important; }
+      .title-main {
+        margin-bottom: 0px !important;
+        font-size: 11.5pt !important;
+      }
+      .title-sub {
+        margin-bottom: 2px !important;
+        font-size: 8.5pt !important;
+        line-height: 1.1 !important;
+      }
+      .title-unit {
+        margin-top: 2px !important;
+        font-size: 10pt !important;
+      }
+      .meta-table {
+        margin-bottom: 4px !important;
+      }
+      .meta-table th,
+      .meta-table td {
+        padding: 2px 1px !important;
+        font-size: 8pt !important;
+      }
+      .meta-table td textarea {
+        height: 26px !important;
+        font-size: 7.5pt !important;
+        line-height: 1.1 !important;
+      }
       .meta-table tr:first-child td:nth-child(1) input,
       .meta-table tr:first-child td:nth-child(3) input,
       .meta-table tr:first-child td:nth-child(4) input {
         font-size: 9pt !important;
       }
-
-      /* Main Table Fit - Extra tight kyunki rows bohot hain */
-      .pi-table th, .pi-table td {
-        padding: 2px 1.5px !important;  
-        line-height: 1.05 !important; 
+      .pi-table th,
+      .pi-table td {
+        padding: 2px 1.5px !important;
+        line-height: 1.05 !important;
         font-size: 8pt !important;
       }
-      
-      /* Page 4 Guidelines Fit */
       .guide-text {
         font-size: 8.5pt !important;
         line-height: 1.1 !important;
       }
-      .guide-text ol > li { margin-bottom: 3px !important; }
-      .guide-text ul { margin-top: 1px !important; }
-      .guide-text ul li { margin-bottom: 1px !important; }
-      .grades-list { margin-top: 2px !important; margin-bottom: 2px !important; }
-      .grade-item { margin-bottom: 1px !important; }
+      .guide-text ol > li {
+        margin-bottom: 3px !important;
+      }
+      .guide-text ul {
+        margin-top: 1px !important;
+      }
+      .guide-text ul li {
+        margin-bottom: 1px !important;
+      }
+      .grades-list {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+      }
+      .grade-item {
+        margin-bottom: 1px !important;
+      }
     </style>
   </head>
   <body>
@@ -137,7 +159,14 @@ AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
               </td>
               <td colspan="1">
                 Date:<br />
-                <input type="text" class="date-field" id="checkDate" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY" />
+                <input
+                  type="text"
+                  class="date-field"
+                  id="checkDate"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
+                />
               </td>
               <td colspan="3">
                 Period:<br />
@@ -215,7 +244,6 @@ AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
                     width: 100%;
                     box-sizing: border-box;
                     padding: 0;
-
                   "
                   readonly
                   placeholder="Auto"
@@ -223,14 +251,22 @@ AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="cLicenceVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="cMedicalVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
@@ -272,14 +308,22 @@ AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="eLicenceVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="eMedicalVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
@@ -801,7 +845,9 @@ AREA CONTROL PROCEDURAL AND AREA CONTROL SURVEILLANCE</textarea
             "
           >
             <option value="">-- Select Remark --</option>
-            <option value="Satisfactory Performance">Satisfactory Performance</option>
+            <option value="Satisfactory Performance">
+              Satisfactory Performance
+            </option>
             <option value="Good Performance">Good Performance</option>
             <option value="Average Performance">Average Performance</option>
           </select>
