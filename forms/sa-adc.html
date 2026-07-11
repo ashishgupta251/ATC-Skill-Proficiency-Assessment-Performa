@@ -26,25 +26,32 @@
       .fraction .bottom {
         padding: 0 4px;
       }
-
-      /* =========================================
-         PAGE 1 FIT & TEXT CLIPPING FIX
-         ========================================= */
-      .pi-table th, .pi-table td {
-        padding: 3px 2px !important;  
-        line-height: 1.15 !important; 
+      .pi-table th,
+      .pi-table td {
+        padding: 3px 2px !important;
+        line-height: 1.15 !important;
       }
       .form-title-block {
         margin-top: 3px !important;
         margin-bottom: 3px !important;
       }
-      .title-main { margin-bottom: 0px !important; }
-      .title-sub { margin-bottom: 4px !important; font-size: 9pt !important; }
-      .meta-table { margin-bottom: 5px !important; }
-      .meta-table th, .meta-table td { padding: 3px 1px !important; }
-      .meta-table td textarea { height: 22px !important; }
-      
-      /* MAGIC FIX: Top table mein lambe naam aur Airport na katein */
+      .title-main {
+        margin-bottom: 0px !important;
+      }
+      .title-sub {
+        margin-bottom: 4px !important;
+        font-size: 9pt !important;
+      }
+      .meta-table {
+        margin-bottom: 5px !important;
+      }
+      .meta-table th,
+      .meta-table td {
+        padding: 3px 1px !important;
+      }
+      .meta-table td textarea {
+        height: 22px !important;
+      }
       .meta-table input[type="text"] {
         font-size: 8.5pt !important;
       }
@@ -78,8 +85,16 @@
           <div class="title-unit">AERODROME CONTROL RATING</div>
         </div>
         <table class="meta-table">
-         <colgroup>
-            <col style="width: 31%" /> <col style="width: 7%" />  <col style="width: 7%" />  <col style="width: 7%" />  <col style="width: 29%" /> <col style="width: 7%" />  <col style="width: 7%" />  <col style="width: 7%" />  </colgroup>
+          <colgroup>
+            <col style="width: 31%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 29%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+          </colgroup>
           <tbody>
             <tr>
               <td colspan="1">
@@ -105,7 +120,11 @@ AERODROME CONTROL</textarea
               <td colspan="1">
                 Date:<br />
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="checkDate"
                   style="width: 100%; box-sizing: border-box"
                 />
@@ -193,14 +212,22 @@ AERODROME CONTROL</textarea
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="cLicenceVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="cMedicalVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
@@ -242,14 +269,22 @@ AERODROME CONTROL</textarea
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="eLicenceVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
               </td>
               <td>
                 <input
-                  type="text" class="date-field" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY"
+                  type="text"
+                  class="date-field"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="DD/MM/YYYY"
                   id="eMedicalVal"
                   style="width: 100%; box-sizing: border-box; padding: 0"
                 />
@@ -748,7 +783,9 @@ AERODROME CONTROL</textarea
             "
           >
             <option value="">-- Select Remark --</option>
-            <option value="Satisfactory Performance">Satisfactory Performance</option>
+            <option value="Satisfactory Performance">
+              Satisfactory Performance
+            </option>
             <option value="Good Performance">Good Performance</option>
             <option value="Average Performance">Average Performance</option>
           </select>
